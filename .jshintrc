@@ -24,7 +24,5 @@
     // Environments
     "browser": true,
     "devel": true,
-    "globals": {
-        "require": false
-    }
+    "globals": {}
 }
