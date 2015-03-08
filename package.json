@@ -5,6 +5,8 @@
   "author": "Jason LeMoine",
   "license": "MIT",
   "devDependencies": {
+    "flowcheck": "^0.2.3",
+    "flowcheck-loader": "^1.0.0",
     "gulp": "^3.8.11",
     "gulp-util": "^3.0.4",
     "jsx-loader": "^0.12.2",

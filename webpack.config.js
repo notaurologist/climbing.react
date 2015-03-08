@@ -21,7 +21,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ }
+      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony&stripTypes', 'flowcheck'], exclude: /node_modules/ }
     ]
   }
 };
