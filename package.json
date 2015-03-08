@@ -1,5 +1,18 @@
 {
+  "name": "climbing-app",
+  "version": "0.0.1",
+  "main": "app/main.js",
+  "author": "Jason LeMoine",
+  "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4",
+    "jsx-loader": "^0.12.2",
+    "react-hot-loader": "^1.1.7",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "react": "^0.12.2"
   }
 }
