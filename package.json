@@ -2,7 +2,9 @@
   "name": "climbing-app",
   "version": "0.0.1",
   "description": "Mythical climbing site app.",
-  "keywords": ["climbing"],
+  "keywords": [
+    "climbing"
+  ],
   "homepage": "http://github.com/ishotfirst/climbing",
   "bug": "http://github.com/ishotfirst/climbing/issues",
   "author": "Jason LeMoine <jason.lemoine@gmail.com> (http://ishotfirst.github.io/)",
@@ -13,6 +15,7 @@
     "url": "http://github.com/ishotfirst/climbing.git"
   },
   "devDependencies": {
+    "file-loader": "^0.8.1",
     "flowcheck": "^0.2.3",
     "flowcheck-loader": "^1.0.0",
     "gulp": "^3.8.11",
@@ -20,6 +23,7 @@
     "gulp-util": "^3.0.4",
     "jsx-loader": "^0.12.2",
     "react-hot-loader": "^1.1.7",
+    "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },

@@ -20,7 +20,9 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony&stripTypes', 'flowcheck'], exclude: /node_modules/ }
+      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony&stripTypes', 'flowcheck'], exclude: /node_modules/ },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=4096' }
     ]
   }
 };
