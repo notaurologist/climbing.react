@@ -1,20 +1,35 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var clean = require('gulp-clean');
+var del = require('del');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig = require('./webpack.config.js');
+var gulpSpecificityGraph = require('gulp-specificity-graph');
 
 gulp.task('clean-build', function () {
-  return gulp.src('build/*.js', { read: false })
+  return gulp.src('build/**/*', { read: false })
     .pipe(clean());
+});
+
+gulp.task('clean:build', function (callback) {
+  del([
+    'build/**/*',
+    '!build/**/*.html'
+  ], callback);
+});
+
+gulp.task('specificity-graph', function () {
+  return gulp.src('./screen.css')
+    .pipe(gulpSpecificityGraph({
+      openInBrowser: true
+    }));
 });
 
 // The development server (the recommended option for development)
 gulp.task('default', ['webpack-dev-server']);
 
 // Production build
-gulp.task('build', ['clean-build', 'webpack:build']);
+gulp.task('build', ['clean:build', 'webpack:build']);
 
 gulp.task('webpack:build', function (callback) {
   // modify some webpack config options
