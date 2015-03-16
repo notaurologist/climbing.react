@@ -3,35 +3,57 @@
   "version": "0.0.1",
   "description": "Mythical climbing site app.",
   "keywords": [
-    "climbing"
+    "climbing",
+    "blanket",
+    "react",
+    "flow",
+    "flowcheck",
+    "flux",
+    "postcss",
+    "webpack"
   ],
   "homepage": "http://github.com/ishotfirst/climbing",
   "bug": "http://github.com/ishotfirst/climbing/issues",
-  "author": "Jason LeMoine <jason.lemoine@gmail.com> (http://ishotfirst.github.io/)",
+  "author": "Jason LeMoine <jason.lemoine@gmail.com> (http://jasonlemoine.com)",
   "license": "MIT",
-  "main": "app/main.js",
+  "main": "app/js/main.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "copy-html": "mkdirp build && echo `cp app/index.html build/index.html`",
+    "serve": "node server.js",
+    "start": "npm run copy-html & npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "http://github.com/ishotfirst/climbing.git"
   },
   "devDependencies": {
-    "del": "^1.1.1",
+    "blanket": "^1.1.6",
+    "css-loader": "^0.9.1",
+    "cssnext-loader": "^1.0.1",
     "file-loader": "^0.8.1",
     "flowcheck": "^0.2.3",
     "flowcheck-loader": "^1.0.0",
-    "gulp": "^3.8.11",
-    "gulp-clean": "^0.3.1",
-    "gulp-specificity-graph": "^0.0.1-beta",
-    "gulp-util": "^3.0.4",
     "jsx-loader": "^0.12.2",
+    "mkdirp": "^0.5.0",
+    "postcss": "^4.0.6",
+    "postcss-loader": "^0.3.0",
+    "postcss-mixins": "^0.1.1",
+    "postcss-nested": "^0.2.2",
     "react-hot-loader": "^1.1.7",
+    "rimraf": "^2.3.2",
+    "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.7.2",
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
+    "cssrecipes-defaults": "^0.5.0",
     "flux": "^2.0.1",
-    "react": "^0.12.2"
+    "normalize.css": "^3.0.2",
+    "react": "^0.12.2",
+    "react-router": "^0.12.4"
   },
   "private": true
 }

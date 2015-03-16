@@ -1,0 +1,8 @@
+[ignore]
+
+[include]
+app/js
+
+[libs]
+
+[options]
