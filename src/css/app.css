@@ -76,7 +76,6 @@
 /**
  * #SETTINGS
  */
-@import "../../node_modules/cssrecipes-defaults/index";
 /*@import "settings.defaults";
 @import "settings.global";*/
 @import "_settings.colors";

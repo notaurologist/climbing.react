@@ -7,13 +7,13 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
-    './app/js/main'
+    './src/js/app'
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: __dirname + '/build/',
+    path: __dirname + '/dist/',
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -21,7 +21,7 @@ module.exports = {
   cssnext: {
     features: {
       import: {
-        path: ['/app/css/']
+        path: ['/src/css/']
       }
     }
   },
@@ -31,11 +31,7 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loaders: ['react-hot', 'jsx?harmony&insertPragma=React.DOM&stripTypes', 'flowcheck'],
-        exclude: /node_modules/
-      },
+      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony&insertPragma=React.DOM&stripTypes', 'flowcheck'], exclude: /node_modules/ },
       { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader!cssnext-loader' },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=4096' }
     ]

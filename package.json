@@ -15,15 +15,15 @@
   "bug": "http://github.com/ishotfirst/climbing/issues",
   "author": "Jason LeMoine <jason.lemoine@gmail.com> (http://jasonlemoine.com)",
   "license": "MIT",
-  "main": "app/js/main.js",
+  "main": "src/js/app.js",
   "scripts": {
-    "clean": "rimraf build",
-    "prebuild:html": "npm run clean -s && mkdirp build -s",
-    "build:html": "echo `cp app/*.html build/`",
+    "clean": "rimraf dist",
+    "prebuild:html": "npm run clean -s && mkdirp dist -s",
+    "build:html": "echo `cp src/*.html dist/`",
     "open:dev": "open http://localhost:8080/webpack-dev-server/",
     "prestart": "npm run build:html -s && npm run open:dev -s",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "version:patch": "npm version patch --sign-git-tag=true -m 'Bumped version to %s'",
     "version:minor": "npm version minor --sign-git-tag=true -m 'Bumped version to %s'",
     "version:major": "npm version major --sign-git-tag=true -m 'Bumped version to %s'"
@@ -38,9 +38,9 @@
     "file-loader": "^0.8.1",
     "flowcheck": "^0.2.3",
     "flowcheck-loader": "^1.0.0",
+    "jest-cli": "^0.4.0",
     "jsx-loader": "^0.12.2",
     "mkdirp": "^0.5.0",
-    "opener": "^1.4.0",
     "postcss": "^4.0.6",
     "postcss-loader": "^0.3.0",
     "postcss-mixins": "^0.1.1",
@@ -53,11 +53,9 @@
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
-    "cssrecipes-defaults": "^0.5.0",
     "flux": "^2.0.1",
     "normalize.css": "^3.0.2",
-    "react": "^0.12.2",
-    "react-router": "^0.12.4"
+    "react": "^0.12.2"
   },
   "private": true
 }

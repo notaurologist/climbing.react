@@ -1,7 +1,7 @@
 [ignore]
 
 [include]
-app/js
+src/js
 
 [libs]
 
