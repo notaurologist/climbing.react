@@ -1,0 +1,9 @@
+# node_modules ignored by default
+
+# Build files
+dist/
+coverage/
+docs/
+
+# Configs
+webpack.*

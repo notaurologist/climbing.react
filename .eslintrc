@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  }, // http://eslint.org/docs/user-guide/configuring#specifying-environments
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ], // http://eslint.org/docs/user-guide/configuring#extending-configuration-files
+  "parser": "babel-eslint",          // https://github.com/babel/babel-eslint
+  "plugins": [
+    "react"                          // https://github.com/yannickcr/eslint-plugin-react
+  ]
+}

@@ -7,4 +7,4 @@ on the [Keep a CHANGELOG site](http://keepachangelog.com/).
 ## [Unreleased][unreleased]
 
 
-[unreleased]: https://github.com/ishotfirst/climbing/compare/master...HEAD
+[unreleased]: https://github.com/notaurologist/climbing/compare/master...HEAD
