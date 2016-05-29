@@ -1,2 +1,2 @@
 # climbing
-Mythical climb-tracking site.
+Mythical climb-tracking app.
