@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './routeForm.css';
 
 const RouteForm = () => (
-  <section>
+  <section className={ styles.routeForm }>
     <h3>Add a route</h3>
     <form action="/route/add" method="POST">
       <ul>

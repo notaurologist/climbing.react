@@ -2,10 +2,11 @@
   "env": {
     "production": {
       "plugins": [
+        "transform-react-remove-prop-types",
         "transform-react-inline-elements",
         "transform-react-constant-elements"
       ]
     }
   },
-  "presets": ["es2015-rollup", "react"]
+  "presets": ["es2015", "react"]
 }

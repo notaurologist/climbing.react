@@ -1,9 +1,9 @@
 # node_modules ignored by default
 
 # Build files
-dist/
+build/
 coverage/
 docs/
 
 # Configs
-webpack.*
+*.config.js
