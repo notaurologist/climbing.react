@@ -12,7 +12,7 @@ module.exports = (options) => ({
     publicPath: '/',
   }, options.output),
   resolve: {
-    extensions: ['', '.js'],
+    modules: ['app', 'node_modules']
   },
   module: {
     loaders: [{
@@ -28,14 +28,36 @@ module.exports = (options) => ({
       exclude: /node_modules/,
       loader: options.cssLoaders
     }, {
+      // Do not transform vendor's CSS with CSS-modules
+      // The point is that they remain in global scope.
+      // Since we require these CSS files in our JS or CSS files,
+      // they will be a part of our compilation either way.
+      // So, no need for ExtractTextPlugin here.
+      test: /\.css$/,
+      include: /node_modules/,
+      loaders: ['style', 'css'],
+    }, {
       test: /\.html$/,
       loader: 'html',
     }, {
-      test: /\.(svg|png|jpg|woff|woff2)$/,
+      test: /\.(svg|png|jpg|gif)$/,
       loader: 'url?limit=4096'
+    }, {
+      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff',
+    }, {
+      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff',
+    }, {
+      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/octet-stream',
+    }, {
+      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file?name=fonts/[name].[hash].[ext]',
     }]
   },
   plugins: options.plugins.concat([
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.ProvidePlugin({
       // make fetch available
       fetch: 'exports?self.fetch!whatwg-fetch',
@@ -50,7 +72,7 @@ module.exports = (options) => ({
       },
     }),
   ]),
-  target: 'web',
+  postcss: () => options.postcssPlugins,
   stats: false,
   progress: true
 });
