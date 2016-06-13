@@ -4,34 +4,28 @@
   "description": "Mythical climbing app.",
   "keywords": [
     "climbing",
-    "react"
+    "react",
+    "redux"
   ],
   "homepage": "http://github.com/notaurologist/climbing",
   "bug": "http://github.com/notaurologist/climbing/issues",
   "author": "Jason LeMoine <github@lemoine.io> (http://www.jasonlemoine.com)",
   "license": "MIT",
+  "engines": {
+    "node": ">= 4.4.5"
+  },
   "main": "app/main.js",
   "scripts": {
-    "prebabel": "rimraf lib",
-    "babel": "babel src --out-dir lib",
-    "prebuild": "rimraf build && npm run test",
-    "build": "npm run webpack -- --config ./webpack/webpack.dev.config.js",
-    "build:devel": "NODE_ENV=development npm run build",
+    "prebuild": "rimraf build",
+    "build": "webpack",
+    "build:devel": "NODE_ENV=development npm run build -- --config ./webpack/webpack.dev.config.js",
     "build:production": "NODE_ENV=production npm run webpack -- --config ./webpack/webpack.prod.config.js",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint .",
-    "lint:css": "stylelint ./app/**/*.css",
-    "start": "npm run wds",
-    "start:devel": "NODE_ENV=development npm run start",
-    "start:production": "NODE_ENV=production npm run webpack-dev-server -- -p --config ./webpack/webpack.prod.config.js",
-    "test": "mocha -- .enzyme.js 'test/**/*Spec.js'",
+    "lint:js": "eslint ./src/**/*.js",
+    "lint:css": "stylelint ./src/**/*.css",
+    "test": "echo 'boo-urns'",
     "test:watch": "npm run test -- -w",
-    "version:patch": "npm version patch --sign-git-tag=true -m 'Bumped version to %s'",
-    "version:minor": "npm version minor --sign-git-tag=true -m 'Bumped version to %s'",
-    "version:major": "npm version major --sign-git-tag=true -m 'Bumped version to %s'",
-    "wds": "npm run webpack-dev-server -- --config ./webpack/webpack.dev.config.js",
-    "webpack": "babel-node -- ./node_modules/.bin/webpack --progress",
-    "webpack-dev-server": "babel-node -- ./node_modules/.bin/webpack-dev-server"
+    "start": "babel-node ./app/server.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +33,9 @@
   },
   "dependencies": {
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -51,26 +47,33 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.2.7",
     "babel-preset-es2015": "^6.4.1",
     "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
     "css-loader": "^0.23.1",
+    "deep-freeze": "0.0.1",
     "enzyme": "^2.3.0",
     "eslint": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^1.2.2",
     "eslint-plugin-react": "^5.1.1",
+    "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
+    "faucet": "0.0.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.18.0",
     "postcss": "^5.0.21",
     "postcss-loader": "^0.9.1",
     "progress-bar-webpack-plugin": "^1.8.0",
+    "react-addons-perf": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "rimraf": "^2.5.2",
     "sanitize.css": "^3.3.0",
     "style-loader": "^0.13.1",
     "stylelint": "^6.5.1",
     "stylelint-config-standard": "^8.0.0",
+    "tape": "^4.5.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }

@@ -1,12 +1,11 @@
 import React from 'react';
 
-import styles from './app.css';
-import RouteForm from './Route/RouteForm';
+import RouteForm from './route/RouteForm';
 
 const App = () => (
-  <main className={ styles.wrapper }>
+  <div>
     <RouteForm />
-  </main>
+  </div>
 );
 
 export default App;

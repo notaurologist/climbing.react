@@ -1,5 +1,6 @@
 {
   "env": {
+    "node": true,
     "browser": true,
     "es6": true
   }, // http://eslint.org/docs/user-guide/configuring#specifying-environments
@@ -20,6 +21,7 @@
     }
   },
   "rules": {
+    "comma-dangle": [2, "always-multiline"],
     "jsx-a11y/href-no-hash": 2,
     "jsx-a11y/label-has-for": 2,
     "jsx-a11y/mouse-events-have-key-events": 2,

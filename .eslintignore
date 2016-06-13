@@ -1,9 +1,0 @@
-# node_modules ignored by default
-
-# Build files
-build/
-coverage/
-docs/
-
-# Configs
-*.config.js

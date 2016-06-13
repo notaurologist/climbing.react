@@ -1,32 +1,29 @@
 /*
  * Webpack base configuration
  */
-const path = require('path');
-const webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = (options) => ({
+export default (options) => ({
   devtool: options.devtool,
   entry: options.entry,
   output: Object.assign({
     path: path.resolve(process.cwd(), 'build'),
     publicPath: '/',
   }, options.output),
-  resolve: {
-    modules: ['app', 'node_modules']
-  },
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
-      query: options.babelQuery
+      query: options.babelQuery,
     }, {
       test: /\.json$/,
-      loader: 'json'
+      loader: 'json',
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: options.cssLoaders
+      loader: options.cssLoaders,
     }, {
       // Do not transform vendor's CSS with CSS-modules
       // The point is that they remain in global scope.
@@ -41,7 +38,7 @@ module.exports = (options) => ({
       loader: 'html',
     }, {
       test: /\.(svg|png|jpg|gif)$/,
-      loader: 'url?limit=4096'
+      loader: 'url?limit=4096',
     }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file?name=fonts/[name].[hash].[ext]&mimetype=application/font-woff',
@@ -54,10 +51,9 @@ module.exports = (options) => ({
     }, {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file?name=fonts/[name].[hash].[ext]',
-    }]
+    }],
   },
   plugins: options.plugins.concat([
-    new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.ProvidePlugin({
       // make fetch available
       fetch: 'exports?self.fetch!whatwg-fetch',
@@ -74,5 +70,5 @@ module.exports = (options) => ({
   ]),
   postcss: () => options.postcssPlugins,
   stats: false,
-  progress: true
+  progress: true,
 });

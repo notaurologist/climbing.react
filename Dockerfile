@@ -11,7 +11,7 @@ RUN npm install
 COPY .babelrc /usr/local/climbing.react/.babelrc
 COPY webpack /usr/local/climbing.react/webpack
 COPY app /usr/local/climbing.react/app
-RUN npm run build
+RUN npm run build:devel
 
 EXPOSE 8080
 RUN npm start

@@ -1,6 +1,0 @@
-@charset "UTF-8";
-@import url("sanitize.css/sanitize.css");
-
-.wrapper {
-  display: flex;
-}
