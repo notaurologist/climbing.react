@@ -21,7 +21,7 @@
     "build:devel": "NODE_ENV=development npm run build -- --config ./webpack/webpack.dev.config.js",
     "build:production": "NODE_ENV=production npm run webpack -- --config ./webpack/webpack.prod.config.js",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint ./src/**/*.js",
+    "lint:js": "eslint --fix ./src/**/*.js",
     "lint:css": "stylelint ./src/**/*.css",
     "test": "echo 'boo-urns'",
     "test:watch": "npm run test -- -w",
@@ -69,11 +69,12 @@
     "sanitize.css": "^3.3.0",
     "style-loader": "^0.13.1",
     "stylelint": "^6.5.1",
-    "stylelint-config-standard": "^8.0.0",
+    "stylelint-config-standard": "^9.0.0",
     "tape": "^4.5.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.10.0",
+    "why-did-you-update": "^0.0.8"
   }
 }

@@ -1,17 +1,8 @@
 {
   "root": true,
   "plugins": [
-    "esformatter-jsx", // MUST BE FIRST
-    "esformatter-braces",
-    "esformatter-eol-last",
-    "esformatter-parseint",
-    "esformatter-quotes",
-    "esformatter-quote-props",
-    "esformatter-remove-trailing-commas"
+    "esformatter-jsx" // MUST BE FIRST
   ],
-  "quotes": {
-    "type": "single"
-  },
   "jsx": {
     // whether to recursively format jsx expressions with esformatter
     // set this to false if you don't want JSXExpressions to be formatted recursively, like when using problematic plugins
