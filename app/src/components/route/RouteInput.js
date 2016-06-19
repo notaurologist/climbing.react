@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './routeInput.css';
 
 const RouteInput = () => (
-  <section>
+  <section className={ styles.container }>
     <h3>Add a route</h3>
     <form action="/route/add" method="POST">
       <ul>

@@ -22,12 +22,14 @@ function route(state, action) {
 				type: action.type,
         id: action.id,
         relatedId: null,
-      }
+      };
     case EDIT_ROUTE:
       return Object.assign({}, state, {
         name: action.name,
 				type: action.type,
-      }
+      });
+		default:
+			return state;
   }
 }
 
@@ -37,20 +39,20 @@ function byId(state = initialById, action) {
     case EDIT_ROUTE:
       return Object.assign({}, state, {
         [action.id]: route(state[action.id], action),
-      };
+      });
     default:
-      return state
+      return state;
   }
 }
 
 function listedIds(state = initialListedIds, action) {
   switch (action.type) {
     case ADD_ROUTE:
-      return [action.id, ...state]
+      return [action.id, ...state];
     case DELETE_ROUTE:
-      return state.filter(id => id !== action.id)
+      return state.filter(id => id !== action.id);
     default:
-      return state
+      return state;
   }
 }
 

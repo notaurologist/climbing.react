@@ -1,5 +1,6 @@
 {
   "env": {
+    "node": true,
     "browser": true,
     "es6": true
   }, // http://eslint.org/docs/user-guide/configuring#specifying-environments
