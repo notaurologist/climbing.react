@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RouteForm = () => (
+const RouteInput = () => (
   <section>
     <h3>Add a route</h3>
     <form action="/route/add" method="POST">
@@ -27,4 +27,4 @@ const RouteForm = () => (
   </section>
 );
 
-export default RouteForm;
+export default RouteInput;

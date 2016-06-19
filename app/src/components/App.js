@@ -1,10 +1,10 @@
 import React from 'react';
 
-import RouteForm from './route/RouteForm';
+import RouteInput from './route/RouteInput';
 
 const App = () => (
   <div>
-    <RouteForm />
+    <RouteInput />
   </div>
 );
 

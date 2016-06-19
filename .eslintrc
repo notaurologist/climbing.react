@@ -1,18 +1,14 @@
 {
   "env": {
-    "node": true,
     "browser": true,
     "es6": true
   }, // http://eslint.org/docs/user-guide/configuring#specifying-environments
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
   ], // http://eslint.org/docs/user-guide/configuring#extending-configuration-files
   "parser": "babel-eslint",          // https://github.com/babel/babel-eslint
-  "plugins": [
-    "react",                         // https://github.com/yannickcr/eslint-plugin-react
-    "jsx-a11y"                       // https://github.com/evcohen/eslint-plugin-jsx-a11y
-  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -20,13 +16,11 @@
       "jsx": true
     }
   },
+  "plugins": [
+    "react",                         // https://github.com/yannickcr/eslint-plugin-react
+    "jsx-a11y"                       // https://github.com/evcohen/eslint-plugin-jsx-a11y
+  ],
   "rules": {
-    "comma-dangle": [2, "always-multiline"],
-    "jsx-a11y/href-no-hash": 2,
-    "jsx-a11y/label-has-for": 2,
-    "jsx-a11y/mouse-events-have-key-events": 2,
-    "jsx-a11y/role-has-required-aria-props": 2,
-    "jsx-a11y/role-supports-aria-props": 2,
-    "jsx-a11y/aria-props": 2
+    "comma-dangle": [2, "always-multiline"]
   }
 }
