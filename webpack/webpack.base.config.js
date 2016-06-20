@@ -3,6 +3,7 @@
  */
 import path from 'path';
 import webpack from 'webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default (options) => ({
   devtool: options.devtool,
@@ -67,6 +68,9 @@ export default (options) => ({
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    new CopyWebpackPlugin([{
+      from: 'node_modules/sanitize.css',
+    }]),
   ]),
   postcss: () => options.postcssPlugins,
   stats: false,

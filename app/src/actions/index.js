@@ -1,8 +1,7 @@
 import * as types from '../constants/ActionTypes';
-import {v4} from 'node-uuid';
 
 export function addRoute(routeName, routeType) {
-  return { type: types.ADD_ROUTE, routeName, routeType, id: v4() };
+  return { type: types.ADD_ROUTE, routeName, routeType };
 }
 
 export function deleteRoute(id) {

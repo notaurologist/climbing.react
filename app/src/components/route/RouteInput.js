@@ -1,30 +1,39 @@
 import React from 'react';
-import styles from './routeInput.css';
+
+import Form from '../common/Form';
+import Input from '../common/Input';
+import Select from '../common/Select';
+import Button from '../common/Button';
+
+import * as routeTypes from '../../constants/RouteTypes';
+
+import {addRoute} from '../../actions';
+
+const handleSubmit = (evt) => {
+  evt.preventDefault();
+  const {routeName, routeType} = evt.target;
+  addRoute(routeName.value, routeType.value);
+};
 
 const RouteInput = () => (
-  <section className={ styles.container }>
+  <section>
     <h3>Add a route</h3>
-    <form action="/route/add" method="POST">
-      <ul>
-        <li>
-          <label htmlFor="routeName">Route Name</label>
-          <input type="text" name="routeName" placeholder="Route name"/>
-        </li>
-        <li>
-          <label htmlFor="routeType">Route Type</label>
-          <select name="routeType" defaultValue="rock">
-            <option value="rock">Rock</option>
-            <option value="boulder">Boulder</option>
-            <option value="aid">Aid</option>
-            <option value="ice">Ice</option>
-            <option value="mixed">Mixed</option>
-          </select>
-        </li>
-        <li>
-          <button>Add</button>
-        </li>
-      </ul>
-    </form>
+    <Form
+      action="/route/add"
+      onSubmit={ handleSubmit }>
+      <Input
+        name="routeName"
+        placeholder="Route name"
+        label="Route Name"
+        autoComplete={ false }
+        autoFocus />
+      <Select
+        name="routeType"
+        options={ Object.values(routeTypes) }
+        defaultValue={ routeTypes.ROCK }
+        label="Route Type" />
+      <Button type="submit">Add</Button>
+    </Form>
   </section>
 );
 

@@ -1,18 +1,8 @@
 import { ADD_ROUTE, DELETE_ROUTE, EDIT_ROUTE } from '../constants/ActionTypes';
+import {v4} from 'node-uuid';
 
 let initialById = {};
 let initialListedIds = [];
-
-const STORE_SIZE = 10000;
-for (let i = 0; i < STORE_SIZE; i++) {
-  let nextId = 'prefilled-' + i
-  initialListedIds.push(nextId)
-  initialById[nextId] = {
-    name: 'Item' + i,
-    id: nextId,
-    relatedId: i > 0 ? 'prefilled-' + (i - 1) : null,
-  };
-}
 
 function route(state, action) {
   switch (action.type) {
@@ -20,8 +10,7 @@ function route(state, action) {
       return {
         name: action.name,
 				type: action.type,
-        id: action.id,
-        relatedId: null,
+        id: v4(),
       };
     case EDIT_ROUTE:
       return Object.assign({}, state, {

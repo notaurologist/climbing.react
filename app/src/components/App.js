@@ -3,9 +3,7 @@ import React from 'react';
 import RouteInput from './route/RouteInput';
 
 const App = () => (
-  <div>
-    <RouteInput />
-  </div>
+  <RouteInput />
 );
 
 export default App;
